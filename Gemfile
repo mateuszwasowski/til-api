@@ -10,6 +10,9 @@ gem "active_model_serializers", "~> 0.10.2"
 gem 'bcrypt', '~> 3.1.7'
 gem "signet"
 gem "httparty"
+gem 'pusher'
+gem 'sidekiq'
+gem 'jsonapi-resources'
 
 group :development, :test do
   gem 'byebug', platform: :mri
