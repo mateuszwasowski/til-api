@@ -7,11 +7,7 @@ module PublishesUpdatesToPusher
     after_commit :notify_via_pusher, on: [:create, :update]
 
     def notify_via_pusher
-      if Sidekiq.server?
-        PusherUpdateWorker.new.perform(self.class.name, id)
-      else
-        PusherUpdateWorker.perform_async(self.class.name, id)
-      end
+      PusherUpdateWorker.new.perform(self.class.name, id)
     end
   end
 end

@@ -12,7 +12,6 @@ gem "signet"
 gem "httparty"
 gem 'pusher'
 gem 'sidekiq'
-gem 'jsonapi-resources'
 
 group :development, :test do
   gem 'byebug', platform: :mri
