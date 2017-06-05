@@ -9,7 +9,7 @@ class Til < ApplicationRecord
     headers: { 'Content-Type' => 'application/json' },
     body: {
       text: print_til
-    }.to_json
+    }.to_json)
   end
 
   def print_til
