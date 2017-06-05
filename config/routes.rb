@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :authors, only: [:index, :show]
+  resources :votes, only: [:index, :show, :create, :destroy]
   resources :tils, only: [:index, :show, :create]
 
   get "/google_auth", to: "session#google"
