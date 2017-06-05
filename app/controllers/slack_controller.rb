@@ -16,15 +16,10 @@ class SlackController < ApplicationController
 
   def slacktilget
     @til = Til.all.sample
-    render status: 200, json: print_til
+    render status: 200, json: @til.print_til
   end
 
   private
-
-  def print_til
-    "#{@til.author.email} posted:
-#{@til.description}"
-  end
 
   def get_author_email
     adv_params = HTTParty.get("https://slack.com/api/users.list?token=#{Rails.application.secrets.slack_token}")
