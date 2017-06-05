@@ -14,6 +14,6 @@ class Til < ApplicationRecord
 
   def print_til
     "#{self.author.email} posted:
-#{self..description}"
+#{self.description}"
   end
 end
